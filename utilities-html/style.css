@@ -1,0 +1,15 @@
+.card-style{
+    max-width: 1200px; margin-left: auto; margin-right: auto;
+}
+
+
+img{
+   
+    max-width: 100%;
+}
+
+
+.card-text{
+    font-style: italic;
+    font-weight: bolder;
+}
