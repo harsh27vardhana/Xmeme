@@ -1,5 +1,5 @@
 
-const backend_url = 'http://localhost:8081/memes';
+const backend_url = 'https://xmeme-backend-server.herokuapp.com/memes';
 async function getdata() {
     const get = await fetch(backend_url);
     const data = await get.json();
@@ -65,10 +65,10 @@ async function show() {
         btn1.textContent = " Edit ";
         btn1.addEventListener('click', function () {
             document.getElementById('namelabel').innerText = data[i].name;
-            document.getElementById('itcaption').value=data[i].caption;
-            document.getElementById('osturl').value=data[i].url;
+            document.getElementById('itcaption').value = data[i].caption;
+            document.getElementById('osturl').value = data[i].url;
             document.getElementById('ide').textContent = data[i].id;
-            
+
         });
 
         juh1.append(btn1);
@@ -78,10 +78,10 @@ async function show() {
 
 show();
 
-async function update(){
-    const data = {  caption: document.getElementById("itcaption").value, url: document.getElementById("osturl").value };
+async function update() {
+    const data = { caption: document.getElementById("itcaption").value, url: document.getElementById("osturl").value };
 
-    const option ={
+    const option = {
         method: 'PATCH',
         mode: 'cors',
         headers: {
@@ -91,7 +91,7 @@ async function update(){
         body: JSON.stringify(data)
     }
     const id = document.getElementById("ide").textContent;
-    const sendm = await fetch(backend_url+'/'+id, option);
+    const sendm = await fetch(backend_url + '/' + id, option);
     // console.log(id);
     window.location.reload();
 }
